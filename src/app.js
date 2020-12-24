@@ -1,5 +1,4 @@
 const express = require('express');
-const studentModel = require('./models/Student');
 const Student = require('./models/Student');
 
 
@@ -12,7 +11,7 @@ app.use(express.json());
 
 // Get all the students
 app.get('/students', async (req, res) => {
-    res.send(await studentModel.find({isDeleted:false}))
+    res.send(await Student.find({isDeleted:false}))
 })
 
 // Add student to database
